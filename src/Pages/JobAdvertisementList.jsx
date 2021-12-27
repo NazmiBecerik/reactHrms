@@ -1,5 +1,5 @@
 import React ,{useState,useEffect}from "react";
-import {Table,Button} from 'semantic-ui-react'
+import {Table,Button, TableRow} from 'semantic-ui-react'
 import JobAdvertisementService from "../Services/JobAdvertisementService";
 
 export default function JobAdvertisementList(){
@@ -21,6 +21,8 @@ export default function JobAdvertisementList(){
         <Table.HeaderCell>Son Başvuru Tarihi</Table.HeaderCell>
         <Table.HeaderCell>Maaş Skalası</Table.HeaderCell>
         <Table.HeaderCell>Aktif Mi?</Table.HeaderCell>
+        <Table.HeaderCell></Table.HeaderCell>
+        
 
       </Table.Row>
     </Table.Header>
@@ -35,10 +37,11 @@ export default function JobAdvertisementList(){
         <Table.Cell>{jobAdvertisement.city.name}</Table.Cell>
         <Table.Cell>{jobAdvertisement.applicationDeadline}</Table.Cell>
         <Table.Cell>Min:{jobAdvertisement.maxWage }<br/>Max:{jobAdvertisement.minWage }</Table.Cell>
+        {
+        //Aktif olup olmadığının sorgusunun kodlaması yapılacak.
+        }
         <Button color="green" className="activityButton">Aktif</Button>
-        <Button color="red" className="activityButton">Aktif Değil</Button>
-
-        
+        <Button color="red" className="activityButton">Değil</Button>
       </Table.Row>
       )
       )}
